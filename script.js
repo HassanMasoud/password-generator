@@ -5,6 +5,7 @@ const includeNumbersElement = document.getElementById("includeNumbers");
 const includeSymbolsElement = document.getElementById("includeSymbols");
 
 const form = document.getElementById("passwordGeneratorForm");
+const passwordDisplay = document.getElementById("passwordDisplay");
 
 const UPPERCASE_CHAR_CODES = arrayLowToHigh(65, 90);
 const LOWERCASE_CHAR_CODES = arrayLowToHigh(97, 122);
@@ -29,6 +30,7 @@ form.addEventListener("submit", (e) => {
     includeNumbers,
     includeSymbols
   );
+  passwordDisplay.textContent = password;
 });
 
 function generatePassword(
@@ -49,7 +51,7 @@ function generatePassword(
       charCodes[Math.floor(Math.random() * characterAmount)];
     passwordCharacters.push(String.fromCharCode(characterCode));
   }
-  console.log(passwordCharacters);
+  return passwordCharacters.join("");
 }
 
 function arrayLowToHigh(low, high) {

@@ -6,8 +6,8 @@ const includeSymbolsElement = document.getElementById("includeSymbols");
 
 const form = document.getElementById("passwordGeneratorForm");
 
-const LOWERCASE_CHAR_CODES = arrayLowToHigh(65, 90);
-const UPPERCASE_CHAR_CODES = arrayLowToHigh(97, 122);
+const UPPERCASE_CHAR_CODES = arrayLowToHigh(65, 90);
+const LOWERCASE_CHAR_CODES = arrayLowToHigh(97, 122);
 const NUMBER_CHAR_CODES = arrayLowToHigh(48, 57);
 const SYMBOL_CHAR_CODES = arrayLowToHigh(33, 47)
   .concat(arrayLowToHigh(58, 64))
@@ -47,7 +47,7 @@ function generatePassword(
   for (let i = 0; i < characterAmount; i++) {
     const characterCode =
       charCodes[Math.floor(Math.random() * characterAmount)];
-    passwordCharacters.push(characterCode);
+    passwordCharacters.push(String.fromCharCode(characterCode));
   }
   console.log(passwordCharacters);
 }
